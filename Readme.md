@@ -1,1 +1,1 @@
-Aqui eu desenvolvo os exercícios de JS do Curso em Vídeo do Prof. Guanabara.
+Aqui serão alocados os arquivos CSS, (eu espero kkk).
