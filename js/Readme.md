@@ -1,1 +1,1 @@
-Aqui eu desenvolvo JavaScript.
+Aqui eu desenvolvo JS.
