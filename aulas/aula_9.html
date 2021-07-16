@@ -5,8 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: rgb(109, 188, 252);
+            color: aliceblue;
+            font: normal 20pt Arial;
+        }
+    </style>
 </head>
 <body>
-    <h1>Iniciando estudos com DOM</h1>
+    <h1>Iniciando os estudos de DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JS</p>
+    <div>Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        corpo.style.background = 'black'
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerText) // o que está escrito em p1
+        document.write(p1.innerHTML) // o que está escrito e formatado em p1
+        p1.style.color = 'blue'
+    </script>
 </body>
 </html>
