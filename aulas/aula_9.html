@@ -16,15 +16,36 @@
 <body>
     <h1>Iniciando os estudos de DOM</h1>
     <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar <strong>DOM</strong> em JS</p>
-    <div>Clique em mim</div>
+    <p>Aprendendo a usar <strong>DOM</strong> em JS (p1)</p>
+    <div class ="msg">Clique em mim</div>
+    <div id="ide">Por id</div>
+    
     <script>
         var corpo = window.document.body
         corpo.style.background = 'black'
-        var p1 = window.document.getElementsByTagName('p')[0]
-        window.document.write(p1.innerText) // o que está escrito em p1
-        document.write(p1.innerHTML) // o que está escrito e formatado em p1
+
+
+        var p1 = window.document.getElementsByTagName('p')[1] // por TagName
         p1.style.color = 'blue'
+        document.write(p1.innerHTML) // o que está escrito e formatado em p1
+        document.write(p1.innerText) // p1 sem formatar
+        //window.alert(p1.innerHTML) // popup de p1 com as tags (innertext sem tags)
+
+        /*
+        var d = document.getElementById('ide') // Por ID. (window omitido, encurta o código)
+        d.style.background = 'green'
+        d.innerText = 'Exemplo de mudança na div por javascript, usando elemento ID'
+        window.document.getElementById('ide').innerText = 'Olá' // Se for usar o comando apenas uma vez.
+        */
+
+        var msg = window.document.getElementsByClassName('msg')[0] // Por Classe
+        msg.style.background = 'blue'
+
+        var s = window.document.querySelector('div#ide') // Por Selector. Todo {id} é pepresentado por uma {#} ; e toda classe por um {.}
+        s.style.color = 'pink'
+        s.style.background = 'purple'
+
+
     </script>
 </body>
 </html>
