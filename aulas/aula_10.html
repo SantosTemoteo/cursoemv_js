@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Dom</title>
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background: rgb(108, 236, 101);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="area" onclick="clicar()">
+        Intaregindo...
+    </div>
+
+    <script>
+        function clicar() {
+            // 1º - Quando clicar emcima da div, dispara o clicar.
+            // 2º - Só vai ser executado quando chamar a ação clicar()
+            /* Quando clicar na div, cria um objeto {a} que fará uma ligação
+            entre objeto {a} com o elemento {id ="area"}, que mudará o
+            conteúdo para o bloco da função.*/
+
+            var a = window.document.getElementById('area')
+            a.innerText = 'Clicou!'
+        }
+    </script>
+</body>
+</html>
