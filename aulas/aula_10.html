@@ -15,14 +15,28 @@
             line-height: 200px;
             text-align: center;
         }
+        div#res{
+            margin-top: 11px;
+            background-color: rgb(184, 166, 255);
+        }
+        input#btn{
+            background-color: rgb(188, 239, 247);
+        }
     </style>
 </head>
 
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="area"> <!-- onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" -->
         Intaregindo...
     </div>
-    
+
+    <h1>Somando Valores</h1>
+    <input type="number" name ="txtn1" id="txtn1"> + <!--php name é importante;-->
+    <input type="number" name="txtn2" id="txtn2">
+    <input id="btn" type="button" value="somar"> <!--método somar()-->
+
+    <div id="res">Resultado</div>
+
     <script>
         // 1º - Quando clicar emcima da div, dispara o clicar.
         // 2º - Só vai ser executado quando chamar a ação clicar()
@@ -30,8 +44,12 @@
         entre objeto {a} com o elemento do id {"area"}, que mudará o
         conteúdo para o bloco das funções.*/
         
-        var a = window.document.getElementById('area') // 1º não é bom colocar aqui por problema de uso de memória(Escopo Global) a frente veremos isso.2º Objeto {a} fora da function, funcionará dentro de qualquer outra function.
+        var a = window.document.getElementById('area')  // 1º não é bom colocar aqui por problema de uso de memória(Escopo Global) a frente veremos isso.2º Objeto {a} fora da function, funcionará dentro de qualquer outra function.
         
+        a.addEventListener('click', clicar) // presta atenção em um determinado evento
+        a.addEventListener('mouseenter', entrar)    // essa formatação substitui colocar tudo dentro de uma div; código fica mais limpo
+        a.addEventListener('mouseout', sair)
+        btn.addEventListener('click', somar)
         
         function entrar(){
             a.innerText = 'Entrou :)'
@@ -42,10 +60,25 @@
             a.innerText = 'Clicou :O'
             a.style.background = 'purple'
         }
-
+        
         function sair(){
             a.innerText = 'Saiu :/'
             a.style.background = 'darkred'
+        }
+        
+        function somar(){
+            var sum = window.document.getElementById('btn')    // Não está no escopo global pois só funcionará dentro da function somar()
+            sum.style.background = 'lightgreen'
+
+            var tn1 = window.document.getElementById('txtn1')   // caixa de texto; window.get.. é a ligação, por id.
+            var tn2 = window.document.querySelector('input#txtn2')  // # para id; . para class
+            var res = window.document.querySelector('div#res')
+
+            var n1 = Number(tn1.value)  // caixa de texto = texto; precisamos de uma var para o valor de n1 e n2
+            var n2 = Number(tn2.value)  // se somar sem a conversão para Number, JS entende como string e concatena
+            var s = n1+n2
+
+            res.innerHTML = `${n1} + ${n2} = <strong>${s}</strong>`  // Crase pra funcionar o place holder
         }
     </script>
 </body>
