@@ -46,7 +46,7 @@
         
         var a = window.document.getElementById('area')  // 1º não é bom colocar aqui por problema de uso de memória(Escopo Global) a frente veremos isso.2º Objeto {a} fora da function, funcionará dentro de qualquer outra function.
         
-        a.addEventListener('click', clicar) // presta atenção em um determinado evento
+        a.addEventListener('click', clicar)     // presta atenção em um determinado evento
         a.addEventListener('mouseenter', entrar)    // essa formatação substitui colocar tudo dentro de uma div; código fica mais limpo
         a.addEventListener('mouseout', sair)
         btn.addEventListener('click', somar)
