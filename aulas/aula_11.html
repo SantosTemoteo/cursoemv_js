@@ -34,11 +34,11 @@
         function selecionar(){
             var ttp = document.getElementById('txtpais')
             var pa = document.getElementById('pa')
-            var pais = (ttp.value)
-            if (pais == `Brasil`) {
-                pa.innerHTML = `<p>Você é HUEHUE BR !!</p>`
+            var pais = String(ttp.value)
+            if (pais == `Brasil`|| pais == `brasil`|| pais == 'BRASIL') { // Não consegui por o .toLowerCase();
+                pa.innerHTML = `<p>Você é BRASILEIRO !!</p>`
             } else {
-                pa.innerHTML = `<p>Você é GRINGO !!</p>`
+                pa.innerHTML = `<p>Você é ESTRANGEIRO !!</p>`
             }
         }
 
