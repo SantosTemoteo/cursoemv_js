@@ -34,8 +34,8 @@
         function selecionar(){
             var ttp = document.getElementById('txtpais')
             var pa = document.getElementById('pa')
-            var pais = String(ttp.value)
-            if (pais == `Brasil`|| pais == `brasil`|| pais == 'BRASIL') { // Não consegui por o .toLowerCase();
+            var pais = String(ttp.value)    // Não consegui por o .toLowerCase();
+            if (pais == `Brasil`|| pais == `brasil`|| pais == 'BRASIL') {
                 pa.innerHTML = `<p>Você é BRASILEIRO !!</p>`
             } else {
                 pa.innerHTML = `<p>Você é ESTRANGEIRO !!</p>`
