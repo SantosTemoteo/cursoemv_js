@@ -27,7 +27,6 @@ if (hora < 12) {
 }
 
 */
-
 var agora = new Date()
 var diasem = agora.getDay()
  /*
