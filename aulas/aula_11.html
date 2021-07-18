@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAM</title>
+    <style>
+        div#p{
+            margin-bottom: 20px;
+        }
+       input#b{
+           margin-left: 40px;
+       }
+       input#txtvel{
+           margin-left: 5px;
+       }
+        
+    </style>
+</head>
+<body>
+    <h1>Sistemas de Multas</h1>
+    <h2>Sua nacionalidade</h2>
+    <div id="p"> qual o seu pais ? <input type="text" name="pais" id="txtpais">  
+    <input id="b" type="button" value ="selecionar"></div>
+    Quilometragem <input type="number" name="vel" id="txtvel"> Km/h
+    <input id="calc" type="button" value="Verificar">
+    <div id="pa"></div>
+    <div id="res"></div>
+    <script>
+
+        var txtpa = document.getElementById('b')
+        txtpa.addEventListener('click', selecionar)
+        function selecionar(){
+            var ttp = document.getElementById('txtpais')
+            var pa = document.getElementById('pa')
+            var pais = (ttp.value)
+            if (pais == `Brasil`) {
+                pa.innerHTML = `<p>Você é HUEHUE BR !!</p>`
+            } else {
+                pa.innerHTML = `<p>Você é GRINGO !!</p>`
+            }
+        }
+
+
+
+        var calc = document.getElementById('calc')
+        calc.addEventListener('click', calcular)
+        function calcular(){
+            var txtv = document.getElementById('txtvel')
+            var res = document.querySelector('div#res')
+
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+            if (vel > 60) {
+                res.innerHTML += `<P>VOCÊ ESTÁ <strong>MULTADO</strong> POR EXCESSO DE VELOCIDADE !</P>`     // só = apaga a mensagem anterior; o certo é +=
+            } else {
+                res.innerHTML += `<p>Dirija sempre com cinto de segurança.</p>`     //innerhtml é string, += concatena
+            }
+            
+        }
+    </script>
+</body>
+</html>
