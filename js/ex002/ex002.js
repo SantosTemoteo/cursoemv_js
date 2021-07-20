@@ -9,12 +9,12 @@ function verificar() {
     } else {
         var fsex = document.getElementsByName(`radsex`) // elements = mais de 1 elemento selecionado [] necessário para referenciar o Elem. escolhido.
         var idade = ano - Number(fano.value)
-        res.innerHTML = `idade ${idade}`
+        
+        var genero = ``
 
         var img = document.createElement(`img`)    // Criar uma tag img Dinamicamento no JS
         img.setAttribute(`id`,`foto`)    // Cria um id para a img, com nome foto
 
-        var genero = ``
         if (fsex[0].checked) { // se o elemento de fsex(referenciado) for o [0](masculino)
             genero = `Homem`
             if (idade >= 0 && idade < 10) {
