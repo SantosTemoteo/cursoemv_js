@@ -4,34 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador de Idade</title>
+    <title>Vamos Contar</title>
     <link rel="stylesheet" href="css_ex3.css">
 </head>
 <body>
     <header>
-        <h1>Verificador de Idade</h1>
+        <h1>Vamos Contar</h1>
     </header>
     <section>
       <div>
-        <p>Ano de nascimento:
-            <input type="number" name="txtano" id="txtano" min="0">
+        <p>Início:
+            <input type="number" name="inicio" id="txtinicio">
         </p>
-        <p>Sexo:
-            <input type="radio" name="radsex" id="masc"> <!--o name tem que ser o mesmo pois senão marcaria os dois-->
-            <label for="masc">Masculino</label>
-            <input type="radio" name="radsex" id="fem"> <!--name diferente marca cada um; name igual substitui-->
-            <label for="fem">Feminino</label>
+        <p>Fim:
+            <input type="number" name="fim" id="txtfim">
         </p>
-        <p>
-            <input type="button" value="Verificar" onclick="verificar()">
+        <p>Passo:
+            <input type="number" name="passo" id="txtpasso">
         </p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
       </div>
-      <div id="res">
-            Preencha os dados acima para saber o resultado!
+      <div id="res1">
+            Preparando a contagem...
+      </div>
+      <div id="res2">
+
       </div>
     </section>
     <footer>
-        <p>&copy;Hora Certa</p>
+        <p>&copy;Conta Certa</p>
     </footer>
     <script src="ex003.js"></script>
 </body>
